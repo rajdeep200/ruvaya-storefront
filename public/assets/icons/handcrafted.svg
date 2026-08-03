@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="64" height="64" viewBox="0 0 64 64" fill="none"
+  role="img" aria-labelledby="title desc">
+  <title id="title">Handcrafted</title>
+  <desc id="desc">Elegant hand holding a handmade heart with artisan sparkles.</desc>
+
+  <g stroke="#6b4530" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- Handmade heart -->
+    <path d="M31.8 29.2L24.9 22.7C21.8 19.8 21.6 15.2 24.5 12.4C27.2 9.8 31.1 10.4 33.2 13.2C35.3 10.4 39.2 9.8 41.9 12.4C44.8 15.2 44.6 19.8 41.5 22.7L34.6 29.2C33.8 30 32.6 30 31.8 29.2Z"/>
+
+    <!-- Supporting hand -->
+    <path d="M12.5 39.4H22.4C24.4 39.4 26 40.9 26 42.8V43.4"/>
+    <path d="M26 43.4H36.2C38.4 43.4 40.2 45.1 40.2 47.2C40.2 49.3 38.4 51 36.2 51H24.1C21.7 51 19.4 50.2 17.6 48.8L12.5 44.9"/>
+    <path d="M40.2 47.2L48.8 39.1C50.4 37.6 52.9 37.6 54.4 39.1C55.9 40.6 55.9 42.9 54.4 44.4L46.1 52.3C44.3 54 41.9 55 39.4 55H24.6C21.6 55 18.7 54 16.4 52.1L12.5 48.9"/>
+    <path d="M12.5 37.2V51.8"/>
+
+    <!-- Artisan sparkles -->
+    <path d="M49.3 14.2L50.4 17.1L53.3 18.2L50.4 19.3L49.3 22.2L48.2 19.3L45.3 18.2L48.2 17.1L49.3 14.2Z"/>
+    <path d="M16.5 24.4L17.2 26.2L19 26.9L17.2 27.6L16.5 29.4L15.8 27.6L14 26.9L15.8 26.2L16.5 24.4Z"/>
+  </g>
+</svg>

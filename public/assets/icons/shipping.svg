@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="64" height="64" viewBox="0 0 64 64" fill="none"
+  role="img" aria-labelledby="title desc">
+  <title id="title">Free Shipping</title>
+  <desc id="desc">Elegant delivery truck icon representing free shipping.</desc>
+
+  <g stroke="#6b4530" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- Ground line -->
+    <path d="M10 46.5H14.5"/>
+    <path d="M49.5 46.5H54"/>
+
+    <!-- Main truck body -->
+    <path d="M14 20.5H38V41H14V20.5Z"/>
+    <path d="M38 26H46.5L51 31V41H38V26Z"/>
+
+    <!-- Cab/window -->
+    <path d="M41.5 30.5H46L48.5 33.5V35.5H41.5V30.5Z"/>
+
+    <!-- Package detail -->
+    <path d="M19 25.5H29V33.5H19V25.5Z"/>
+    <path d="M24 25.5V33.5"/>
+    <path d="M19 29.5H29"/>
+
+    <!-- Motion lines -->
+    <path d="M9 25.5H14"/>
+    <path d="M7 30.5H14"/>
+    <path d="M10.5 35.5H14"/>
+
+    <!-- Wheels -->
+    <circle cx="22" cy="46.5" r="4.5"/>
+    <circle cx="45" cy="46.5" r="4.5"/>
+
+    <!-- Wheel hubs -->
+    <circle cx="22" cy="46.5" r="1.2"/>
+    <circle cx="45" cy="46.5" r="1.2"/>
+
+    <!-- Free accent sparkle -->
+    <path d="M50.2 15.2L51.1 17.5L53.4 18.4L51.1 19.3L50.2 21.6L49.3 19.3L47 18.4L49.3 17.5L50.2 15.2Z"/>
+  </g>
+</svg>

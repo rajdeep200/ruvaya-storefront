@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="64" height="64" viewBox="0 0 64 64" fill="none"
+  role="img" aria-labelledby="title desc">
+  <title id="title">Premium fabrics</title>
+  <desc id="desc">Elegant folded fabric with a sparkle, representing premium-quality textiles.</desc>
+
+  <g stroke="#6b4530" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- Folded fabric -->
+    <path d="M14 22.5C22.5 18.8 31.5 18.8 40 22.5L50 27.1V46.5C41.1 42.4 31.5 42.4 22.5 46.5L14 50.4V22.5Z"/>
+    <path d="M14 22.5L22.5 26.4C31.5 22.3 41.1 22.3 50 26.4"/>
+    <path d="M22.5 26.4V46.5"/>
+    <path d="M22.5 26.4C28.1 29.4 34.1 29.4 40 26.4"/>
+    <path d="M30.8 28.9C32.5 34.4 32.5 39.7 30.8 44.1"/>
+    <path d="M38.6 28.2C40.1 33.7 40.1 38.8 38.7 42.9"/>
+
+    <!-- Premium sparkle -->
+    <path d="M47.5 11.8L48.8 15.2L52.2 16.5L48.8 17.8L47.5 21.2L46.2 17.8L42.8 16.5L46.2 15.2L47.5 11.8Z"/>
+    <path d="M38.5 12.8L39.1 14.4L40.7 15L39.1 15.6L38.5 17.2L37.9 15.6L36.3 15L37.9 14.4L38.5 12.8Z"/>
+  </g>
+</svg>
