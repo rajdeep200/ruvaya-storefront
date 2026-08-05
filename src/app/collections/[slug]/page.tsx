@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getCollections, getCollectionBySlug } from "@/lib/api/collections";
+import { getCollectionBySlug } from "@/lib/api/collections";
 import { getProducts, parseProductSearchParams, type RawSearchParams } from "@/lib/api/products";
 import { NotFoundApiError } from "@/lib/api/errors";
 import { ProductListingControls } from "@/components/collection/ProductListingControls";
 import { ProductGrid } from "@/components/collection/ProductGrid";
 import { TrackViewEvent } from "@/components/common/TrackViewEvent";
-
-export async function generateStaticParams() {
-  const collections = await getCollections();
-  return collections.map((c) => ({ slug: c.slug }));
-}
 
 export async function generateMetadata({
   params,
