@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProducts, getProductBySlug, getProductsBySlugs } from "@/lib/api/products";
+import { getProductBySlug, getProductsBySlugs } from "@/lib/api/products";
 import { getReviews } from "@/lib/api/reviews";
 import { getStorefrontConfig } from "@/lib/api/storefront";
 import { NotFoundApiError } from "@/lib/api/errors";
@@ -15,11 +15,6 @@ import { RecentlyViewedList, TrackRecentlyViewed } from "@/components/product/Re
 import { TrackViewEvent } from "@/components/common/TrackViewEvent";
 import { JsonLd } from "@/components/common/JsonLd";
 import { buildBreadcrumbJsonLd, buildProductJsonLd } from "@/lib/seo/structuredData";
-
-export async function generateStaticParams() {
-  const { items } = await getProducts();
-  return items.map((p) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({
   params,
