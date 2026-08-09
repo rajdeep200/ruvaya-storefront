@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Check, ShoppingBag, ClipboardList, MapPin, Package, MessageCircleQuestion, Sparkles, Star, type LucideIcon } from "lucide-react";
 import { getMyOrderDetail } from "@/lib/auth/accountData";
 import { formatDate, formatDateTime, formatInr } from "@/lib/formatting";
-import { ORDER_STATUS_LABEL, ORDER_STATUS_ICON, ORDER_STATUS_MESSAGE } from "@/lib/orderStatus";
+import { ORDER_STATUS_LABEL, ORDER_STATUS_HISTORY_LABEL, ORDER_STATUS_ICON, ORDER_STATUS_MESSAGE } from "@/lib/orderStatus";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -91,7 +91,8 @@ export default async function AccountOrderDetailPage({
                   </div>
                   <div className={isLast ? "pb-1" : "pb-8"}>
                     <p className="font-semibold text-text-primary">
-                      {ORDER_STATUS_LABEL[entry.toStatus] ?? entry.toStatus}
+                      {(isLast ? ORDER_STATUS_LABEL : ORDER_STATUS_HISTORY_LABEL)[entry.toStatus] ??
+                        entry.toStatus}
                     </p>
                     <p className="mt-0.5 text-sm text-text-muted">{formatDateTime(entry.createdAt)}</p>
                   </div>

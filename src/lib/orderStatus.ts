@@ -14,6 +14,17 @@ export const ORDER_STATUS_LABEL: Record<string, string> = {
   PARTIALLY_REFUNDED: "Partially refunded",
 };
 
+// Once a later status exists in the timeline, PENDING_PAYMENT/PAYMENT_PENDING
+// is no longer "pending" - it's a completed checkpoint. ORDER_STATUS_LABEL is
+// correct for a *current* status (still genuinely pending), but reads as a
+// contradiction next to a checkmark in a history list, so history rendering
+// should use this label instead for superseded entries.
+export const ORDER_STATUS_HISTORY_LABEL: Record<string, string> = {
+  ...ORDER_STATUS_LABEL,
+  PENDING_PAYMENT: "Order placed",
+  PAYMENT_PENDING: "Order placed",
+};
+
 export const ORDER_STATUS_TONE: Record<string, "success" | "warning" | "error" | "secondary"> = {
   PENDING_PAYMENT: "warning",
   PAYMENT_PENDING: "warning",
