@@ -67,7 +67,12 @@ export function SignupForm({ nextPath }: { nextPath: string }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form
+        noValidate
+        method="post"
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col gap-4"
+      >
         <Field id="name" label="Full name" error={form.formState.errors.name?.message}>
           <input id="name" type="text" autoComplete="name" className={inputClass} {...form.register("name")} />
         </Field>

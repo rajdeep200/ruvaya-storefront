@@ -67,7 +67,12 @@ export function LoginForm({ nextPath }: { nextPath: string }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form
+        noValidate
+        method="post"
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col gap-4"
+      >
         <Field id="email" label="Email address" error={form.formState.errors.email?.message}>
           <input id="email" type="email" autoComplete="email" className={inputClass} {...form.register("email")} />
         </Field>
