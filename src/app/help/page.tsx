@@ -49,7 +49,7 @@ export default async function HelpPage() {
         We&apos;re here {config.supportHours.toLowerCase()}. WhatsApp is usually fastest.
       </p>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+      <div className={`mt-8 grid gap-4 ${config.supportPhone ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
         <a
           href={`https://wa.me/${config.whatsappNumber.replace(/[^\d]/g, "")}`}
           target="_blank"
@@ -63,10 +63,12 @@ export default async function HelpPage() {
           <p className="text-sm font-medium text-text-primary">Email</p>
           <p className="mt-1 text-xs text-text-secondary">{config.supportEmail}</p>
         </a>
-        <a href={`tel:${config.supportPhone.replace(/\s+/g, "")}`} className="rounded-md border border-border p-4 text-center hover:border-primary">
-          <p className="text-sm font-medium text-text-primary">Call</p>
-          <p className="mt-1 text-xs text-text-secondary">{config.supportPhone}</p>
-        </a>
+        {config.supportPhone && (
+          <a href={`tel:${config.supportPhone.replace(/\s+/g, "")}`} className="rounded-md border border-border p-4 text-center hover:border-primary">
+            <p className="text-sm font-medium text-text-primary">Call</p>
+            <p className="mt-1 text-xs text-text-secondary">{config.supportPhone}</p>
+          </a>
+        )}
       </div>
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2">

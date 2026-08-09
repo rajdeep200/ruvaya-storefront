@@ -107,14 +107,16 @@ export function Footer({ config }: FooterProps) {
                     {config.supportEmail}
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={`tel:${config.supportPhone.replace(/\s+/g, "")}`}
-                    className="hover:text-primary"
-                  >
-                    {config.supportPhone}
-                  </a>
-                </li>
+                {config.supportPhone && (
+                  <li>
+                    <a
+                      href={`tel:${config.supportPhone.replace(/\s+/g, "")}`}
+                      className="hover:text-primary"
+                    >
+                      {config.supportPhone}
+                    </a>
+                  </li>
+                )}
                 <li>{config.supportHours}</li>
                 <li>{config.addressLine}</li>
               </ul>
@@ -174,14 +176,16 @@ export function Footer({ config }: FooterProps) {
                     {config.supportEmail}
                   </a>
                 </ContactRow>
-                <ContactRow icon={Phone}>
-                  <a
-                    href={`tel:${config.supportPhone.replace(/\s+/g, "")}`}
-                    className="hover:text-primary"
-                  >
-                    {config.supportPhone}
-                  </a>
-                </ContactRow>
+                {config.supportPhone && (
+                  <ContactRow icon={Phone}>
+                    <a
+                      href={`tel:${config.supportPhone.replace(/\s+/g, "")}`}
+                      className="hover:text-primary"
+                    >
+                      {config.supportPhone}
+                    </a>
+                  </ContactRow>
+                )}
                 <ContactRow icon={Clock}>{config.supportHours}</ContactRow>
                 <ContactRow icon={MapPin}>{config.addressLine}</ContactRow>
               </div>
