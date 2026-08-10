@@ -9,6 +9,7 @@ import { WishlistButton } from "./WishlistButton";
 import { SizeGuideDialog } from "./SizeGuideDialog";
 import { PriceDisplay } from "./PriceDisplay";
 import { track } from "@/lib/analytics/track";
+import { useToast } from "@/hooks/useToast";
 import type { ProductDetail } from "@/types";
 
 type ProductPurchasePanelProps = {
@@ -18,6 +19,7 @@ type ProductPurchasePanelProps = {
 
 export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchasePanelProps) {
   const router = useRouter();
+  const { toast } = useToast();
   const [selectedColorId, setSelectedColorId] = useState(product.colorVariants[0].id);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [attemptedWithoutSize, setAttemptedWithoutSize] = useState(false);
@@ -34,6 +36,13 @@ export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchas
     : undefined;
 
   const canPurchase = product.isAvailable && !!selectedSize && sizeAvailability?.inStock === true;
+
+  function purchaseBlockedReason(): string {
+    if (!product.isAvailable) return "This kurti is currently unavailable.";
+    if (selectedSize && sizeAvailability && !sizeAvailability.inStock)
+      return `Size ${selectedSize} just sold out in ${colorVariant.name}. Please choose another size.`;
+    return "Please select a size to continue.";
+  }
 
   let inlineMessage: string | null = null;
   if (!product.isAvailable) {
@@ -76,6 +85,7 @@ export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchas
   function handleAddToCart() {
     if (!canPurchase) {
       setAttemptedWithoutSize(true);
+      toast(purchaseBlockedReason(), { variant: "error" });
       return;
     }
     addToCartLine();
@@ -85,6 +95,7 @@ export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchas
   function handleBuyNow() {
     if (!canPurchase) {
       setAttemptedWithoutSize(true);
+      toast(purchaseBlockedReason(), { variant: "error" });
       return;
     }
     addToCartLine();
