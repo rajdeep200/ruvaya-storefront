@@ -224,14 +224,14 @@ export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchas
       </div>
 
       {/* Sticky mobile purchase bar */}
-      <div className="fixed inset-x-0 bottom-0 z-20 flex items-center gap-3 border-t border-border bg-surface px-4 py-3 sm:hidden">
-        <div className="min-w-0 flex-1">
-          <PriceDisplay price={product.price} salePrice={product.salePrice} />
+      <div className="fixed inset-x-0 bottom-0 z-20 flex items-center gap-2 border-t border-border bg-surface px-3 py-3 sm:hidden">
+        <div className="shrink-0">
+          <PriceDisplay price={product.price} salePrice={product.salePrice} variant="compact" />
         </div>
-        <Button type="button" variant="outline" onClick={handleAddToCart} className="h-auto min-h-11 flex-1 rounded-sm">
+        <Button type="button" variant="outline" onClick={handleAddToCart} className="h-auto min-h-11 flex-1 rounded-sm px-2">
           Add to Cart
         </Button>
-        <Button type="button" onClick={handleBuyNow} className="h-auto min-h-11 flex-1 rounded-sm">
+        <Button type="button" onClick={handleBuyNow} className="h-auto min-h-11 flex-1 rounded-sm px-2">
           Buy Now
         </Button>
       </div>
