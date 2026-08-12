@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Star, Ruler, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,14 +15,25 @@ import type { ProductDetail } from "@/types";
 type ProductPurchasePanelProps = {
   product: ProductDetail;
   whatsappNumber: string;
+  selectedColorId: string;
+  onSelectColor: (colorId: string) => void;
 };
 
-export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchasePanelProps) {
+export function ProductPurchasePanel({
+  product,
+  whatsappNumber,
+  selectedColorId,
+  onSelectColor,
+}: ProductPurchasePanelProps) {
   const router = useRouter();
   const { toast } = useToast();
-  const [selectedColorId, setSelectedColorId] = useState(product.colorVariants[0].id);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [attemptedWithoutSize, setAttemptedWithoutSize] = useState(false);
+
+  useEffect(() => {
+    setSelectedSize(null);
+    setAttemptedWithoutSize(false);
+  }, [selectedColorId]);
   const addLine = useCartStore((s) => s.addLine);
   const openDrawer = useCartStore((s) => s.openDrawer);
   const existingLines = useCartStore((s) => s.lines);
@@ -141,11 +152,7 @@ export function ProductPurchasePanel({ product, whatsappNumber }: ProductPurchas
               key={cv.id}
               type="button"
               variant="ghost"
-              onClick={() => {
-                setSelectedColorId(cv.id);
-                setSelectedSize(null);
-                setAttemptedWithoutSize(false);
-              }}
+              onClick={() => onSelectColor(cv.id)}
               aria-pressed={cv.id === selectedColorId}
               aria-label={cv.name}
               className={`h-9 w-9 border-2 p-0 ${cv.id === selectedColorId ? "border-primary" : "border-transparent"}`}

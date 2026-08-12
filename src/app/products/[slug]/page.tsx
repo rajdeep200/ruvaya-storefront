@@ -6,8 +6,7 @@ import { getReviews } from "@/lib/api/reviews";
 import { getStorefrontConfig } from "@/lib/api/storefront";
 import { NotFoundApiError } from "@/lib/api/errors";
 import { productDetailToListItem } from "@/lib/validation/product";
-import { ProductGallery } from "@/components/product/ProductGallery";
-import { ProductPurchasePanel } from "@/components/product/ProductPurchasePanel";
+import { ProductDetailInteractive } from "@/components/product/ProductDetailInteractive";
 import { ProductInfoAccordion } from "@/components/product/ProductInfoAccordion";
 import { ProductReviewsSection } from "@/components/product/ProductReviewsSection";
 import { SimilarProducts } from "@/components/product/SimilarProducts";
@@ -91,12 +90,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </ol>
       </nav>
 
-      <div className="grid gap-10 lg:grid-cols-2">
-        <ProductGallery productId={product.id} images={product.images} video={product.video} productName={product.name} />
-        <div>
-          <ProductPurchasePanel product={product} whatsappNumber={storefrontConfig.whatsappNumber} />
-        </div>
-      </div>
+      <ProductDetailInteractive product={product} whatsappNumber={storefrontConfig.whatsappNumber} />
 
       <ProductInfoAccordion product={product} />
       <ProductReviewsSection reviews={reviews} productSlug={product.slug} />
