@@ -31,10 +31,10 @@ export function ProductListingControls({ totalItems, filterOptions }: ProductLis
           {totalItems} {totalItems === 1 ? "kurti" : "kurtis"}
         </p>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 text-sm text-text-secondary">
+          <div className="flex items-center gap-2 text-sm whitespace-nowrap text-text-secondary">
             Sort by
             <Select value={filters.sort} onValueChange={(value) => setSort(value as ProductSort)}>
-              <SelectTrigger aria-label="Sort by">
+              <SelectTrigger aria-label="Sort by" className="whitespace-nowrap">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
