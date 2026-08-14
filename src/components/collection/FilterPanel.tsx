@@ -8,9 +8,9 @@ import { useProductFilters } from "@/hooks/useProductFilters";
 import type { ProductFilterOptions } from "@/types";
 
 const PRICE_BUCKETS = [
-  { label: "Under ₹1,200", min: undefined, max: 1199 },
-  { label: "₹1,200 – ₹1,500", min: 1200, max: 1500 },
-  { label: "Above ₹1,500", min: 1501, max: undefined },
+  { label: "Under ₹499", min: undefined, max: 498 },
+  { label: "₹499 – ₹699", min: 499, max: 699 },
+  { label: "Above ₹699", min: 700, max: undefined },
 ];
 
 type FilterPanelProps = {
