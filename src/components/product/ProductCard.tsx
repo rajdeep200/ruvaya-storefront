@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { WishlistButton } from "./WishlistButton";
 import { PriceDisplay } from "./PriceDisplay";
+import { StarRating } from "@/components/reviews/StarRating";
 import { MoveToCartDialog } from "./MoveToCartDialog";
 import { Card, CardMedia, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -73,6 +74,12 @@ export function ProductCard({ product, showBadge = true, imageSizes = "(min-widt
           <p className="mt-0.5 truncate text-[11px] text-text-secondary">
             {product.fabric} {product.category}
           </p>
+          {product.rating.count > 0 && (
+            <div className="mt-1 flex items-center gap-1">
+              <StarRating rating={product.rating.average} size={11} />
+              <span className="text-[11px] text-text-secondary">({product.rating.count})</span>
+            </div>
+          )}
           <div className="mt-1 flex items-center justify-between gap-2">
             <PriceDisplay price={product.price} salePrice={product.salePrice} />
             {product.colors.length > 1 && (
